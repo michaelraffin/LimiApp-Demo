@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class DashboardVC: UIViewController {
+    
     @IBOutlet weak var lblSelectedCity: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,28 +22,20 @@ class ViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "searchLocation" {
-//            let searchVC = SearchCityVC()
-//            searchVC.delegate = self
-//        }
-//    }
     @IBAction func btnSearchTapped(_ sender: Any) {
-        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SearchCityID") as! SearchCityVC
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
-extension ViewController : searchActionDelegate {
+extension DashboardVC : searchActionDelegate {
     func getRecent(value: String) {
-         lblSelectedCity.isHidden = false
+        lblSelectedCity.isHidden = false
         lblSelectedCity.text = "You selected: \(value)"
     }
     

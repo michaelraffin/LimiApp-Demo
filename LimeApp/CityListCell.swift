@@ -19,8 +19,6 @@ class CityListCell: UITableViewCell {
         imgBanner.layer.masksToBounds = false
         imgBanner.layer.cornerRadius = imgBanner.frame.height/2
         imgBanner.clipsToBounds = true
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

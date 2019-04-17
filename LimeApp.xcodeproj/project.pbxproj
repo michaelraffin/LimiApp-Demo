@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		13D444D077857F271CC0DD5A /* Pods_LimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEED713BF55E637286D34AC8 /* Pods_LimeAppUITests.framework */; };
 		2779EFE422673382009FEEF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779EFE322673382009FEEF7 /* AppDelegate.swift */; };
-		2779EFE622673382009FEEF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779EFE522673382009FEEF7 /* ViewController.swift */; };
+		2779EFE622673382009FEEF7 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779EFE522673382009FEEF7 /* DashboardVC.swift */; };
 		2779EFE922673382009FEEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2779EFE722673382009FEEF7 /* Main.storyboard */; };
 		2779EFEB22673383009FEEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2779EFEA22673383009FEEF7 /* Assets.xcassets */; };
 		2779EFEE22673383009FEEF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2779EFEC22673383009FEEF7 /* LaunchScreen.storyboard */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		2779EFE022673382009FEEF7 /* LimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2779EFE322673382009FEEF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2779EFE522673382009FEEF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2779EFE522673382009FEEF7 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		2779EFE822673382009FEEF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2779EFEA22673383009FEEF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2779EFED22673383009FEEF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,17 +112,33 @@
 		2779EFE222673382009FEEF7 /* LimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				2779F018226789B7009FEEF7 /* Controller */,
+				2779F017226789A9009FEEF7 /* Model */,
 				2779EFE322673382009FEEF7 /* AppDelegate.swift */,
-				2779EFE522673382009FEEF7 /* ViewController.swift */,
 				2779EFE722673382009FEEF7 /* Main.storyboard */,
 				2779EFEA22673383009FEEF7 /* Assets.xcassets */,
 				2779EFEC22673383009FEEF7 /* LaunchScreen.storyboard */,
 				2779EFEF22673383009FEEF7 /* Info.plist */,
-				2779F01122673989009FEEF7 /* SearchCityVC.swift */,
 				2779F013226743A6009FEEF7 /* CityListCell.swift */,
-				2779F01522674C65009FEEF7 /* City.swift */,
 			);
 			path = LimeApp;
+			sourceTree = "<group>";
+		};
+		2779F017226789A9009FEEF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2779F01522674C65009FEEF7 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2779F018226789B7009FEEF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2779F01122673989009FEEF7 /* SearchCityVC.swift */,
+				2779EFE522673382009FEEF7 /* DashboardVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		697440E8D1CE84C6D205B851 /* Frameworks */ = {
@@ -371,7 +387,7 @@
 			files = (
 				2779F01222673989009FEEF7 /* SearchCityVC.swift in Sources */,
 				2779F01622674C65009FEEF7 /* City.swift in Sources */,
-				2779EFE622673382009FEEF7 /* ViewController.swift in Sources */,
+				2779EFE622673382009FEEF7 /* DashboardVC.swift in Sources */,
 				2779F014226743A6009FEEF7 /* CityListCell.swift in Sources */,
 				2779EFE422673382009FEEF7 /* AppDelegate.swift in Sources */,
 			);

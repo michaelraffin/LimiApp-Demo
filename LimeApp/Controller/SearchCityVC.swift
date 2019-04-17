@@ -11,22 +11,6 @@ import PromiseKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
-struct city {
-    var banner = ""
-   var color = "";
-   var country_code = ""
-    var id = ""
-//    var latitude = "25.04776";
-//   var longitude = "121.53185";
-   var name = ""
-   var population = 0
-   var subtitle = ""
-   var type = ""
-  var  zoom = 0
-    
-    
-    
-}
 protocol searchActionDelegate{
     func getRecent(value:String)
 }
@@ -42,14 +26,13 @@ class SearchCityVC: UIViewController,UISearchResultsUpdating,UISearchBarDelegate
         tableVIew.dataSource = self
         tableVIew.delegate = self
         displayCiy { (data, error) in
-            print(data)
-           
+            if data!.count > 2 {
                 let resp = try! JSONDecoder().decode([Country].self, from: data!)
                 self.countryList = resp
                 self.filetredCountry = self.countryList
                 print(self.countryList.count)
-               self.tableVIew.reloadData()
-            
+                self.tableVIew.reloadData()
+            }
         }
         setupView()
     }
@@ -66,7 +49,7 @@ class SearchCityVC: UIViewController,UISearchResultsUpdating,UISearchBarDelegate
         tableVIew.rowHeight = 60
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-  
+        
         searchCity(value: searchText) { (data, error) in
             if data != nil {
                 let resp = try! JSONDecoder().decode([Country].self, from: data!)
@@ -75,15 +58,15 @@ class SearchCityVC: UIViewController,UISearchResultsUpdating,UISearchBarDelegate
                 print(self.countryList.count)
                 self.tableVIew.reloadData()
             }
- 
+            
         }
- 
+        
     }
     func updateSearchResults(for searchController: UISearchController) {
- 
+        
     }
     override func viewWillAppear(_ animated: Bool) {
-              self.navigationController!.navigationBar.isHidden =  false
+        self.navigationController!.navigationBar.isHidden =  false
     }
 }
 //Table view
@@ -106,13 +89,13 @@ extension SearchCityVC : UITableViewDelegate,UITableViewDataSource {
             cell.lblAbriv.text = String(describing: data.name!.prefix(3)).capitalized
             cell.imgBanner.maskWith(color: hexStringToUIColor(hex: data.color!))
         }
-       
+        
         cell.lblCityName.text = data.subtitle
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate.getRecent(value: countryList[indexPath.row].name!)
-       navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -138,7 +121,6 @@ extension SearchCityVC : UITableViewDelegate,UITableViewDataSource {
     
 }
 extension UIImageView {
-    
     func maskWith(color: UIColor) {
         guard let tempImage = image?.withRenderingMode(.alwaysTemplate) else { return }
         image = tempImage
@@ -146,7 +128,6 @@ extension UIImageView {
     }
     
 }
-//Scroll view
 extension SearchCityVC :  UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         NSLog("Table view scroll detected at offset: %f", scrollView.contentOffset.y)
@@ -155,41 +136,34 @@ extension SearchCityVC :  UIScrollViewDelegate {
 }
 
 extension SearchCityVC {
-        func displayCiy(completion : @escaping (Data?,Error?) -> Void){
-            let urlString = "https://lemi.travel/api/v5/cities"
-            let url = URL(string: urlString)!
+    func displayCiy(completion : @escaping (Data?,Error?) -> Void){
+        let urlString = "https://lemi.travel/api/v5/cities"
+        _ = URL(string: urlString)!
         Alamofire.request(urlString)
             .validate()
             .responseJSON { response in
                 
                 print (response)
                 switch response.result {
-                case .success(let json):
-                   completion(response.data!,nil)
+                case .success( _):
+                    completion(response.data!,nil)
                 case .failure(let error):
                     completion(nil,error)
                     break             }
         }
         
-        
-        
     }
     func searchCity(value:String,completion : @escaping (Data?,Error?) -> Void){
         let urlString = "https://lemi.travel/api/v5/cities?q=\(value)"
-        let url = URL(string: urlString)!
         Alamofire.request(urlString)
             .validate()
             .responseJSON { response in
-                
-                print (response)
                 switch response.result {
-                case .success(let json):
-                    print (response.result)
-                     print (response.data)
+                case .success( _):
                     if  response.data!.count > 2 {
                         completion(response.data!,nil)
                     }else {
-                            completion(nil,nil)
+                        completion(nil,nil)
                     }
                 case .failure(let error):
                     completion(nil,error)

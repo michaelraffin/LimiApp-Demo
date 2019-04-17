@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--DashboardVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DashboardVC" customModule="LimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,8 +39,8 @@
                                     <constraint firstAttribute="height" constant="40" id="SZQ-Pd-9fq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You seleceted: Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GG-qq-rR8">
-                                <rect key="frame" x="72" y="143" width="210" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You seleceted: Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GG-qq-rR8">
+                                <rect key="frame" x="72" y="143" width="287" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                             <constraint firstItem="Xv1-YR-r0F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QLY-23-jX5"/>
                             <constraint firstItem="Xv1-YR-r0F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Xjq-ds-ntv"/>
                             <constraint firstItem="8GG-qq-rR8" firstAttribute="leading" secondItem="shW-4Q-8q6" secondAttribute="leading" id="h4J-6e-7ZA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8GG-qq-rR8" secondAttribute="trailing" constant="16" id="p8Z-uP-3l6"/>
                             <constraint firstItem="shW-4Q-8q6" firstAttribute="centerY" secondItem="Xv1-YR-r0F" secondAttribute="centerY" id="v17-KT-i0Q"/>
                             <constraint firstItem="shW-4Q-8q6" firstAttribute="leading" secondItem="Xv1-YR-r0F" secondAttribute="trailing" constant="16" id="z3U-Xe-0we"/>
                         </constraints>
@@ -67,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="815"/>
+            <point key="canvasLocation" x="976.79999999999995" y="814.54272863568224"/>
         </scene>
         <!--Search CityVC-->
         <scene sceneID="iEp-Ad-WWI">
