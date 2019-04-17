@@ -112,14 +112,12 @@
 		2779EFE222673382009FEEF7 /* LimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				2779F01922678A98009FEEF7 /* Views */,
 				2779F018226789B7009FEEF7 /* Controller */,
 				2779F017226789A9009FEEF7 /* Model */,
 				2779EFE322673382009FEEF7 /* AppDelegate.swift */,
-				2779EFE722673382009FEEF7 /* Main.storyboard */,
 				2779EFEA22673383009FEEF7 /* Assets.xcassets */,
-				2779EFEC22673383009FEEF7 /* LaunchScreen.storyboard */,
 				2779EFEF22673383009FEEF7 /* Info.plist */,
-				2779F013226743A6009FEEF7 /* CityListCell.swift */,
 			);
 			path = LimeApp;
 			sourceTree = "<group>";
@@ -139,6 +137,16 @@
 				2779EFE522673382009FEEF7 /* DashboardVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2779F01922678A98009FEEF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2779F013226743A6009FEEF7 /* CityListCell.swift */,
+				2779EFEC22673383009FEEF7 /* LaunchScreen.storyboard */,
+				2779EFE722673382009FEEF7 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		697440E8D1CE84C6D205B851 /* Frameworks */ = {
